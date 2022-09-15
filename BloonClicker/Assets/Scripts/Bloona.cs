@@ -6,6 +6,8 @@ public class Bloona : MonoBehaviour
 {
     public int scoreToGive = 100;
 
+    public ScoreManager scoreManager;
+
     public int clickToPop = 3;
 
     public float scaleToIncrease = 0.10f;
@@ -13,7 +15,7 @@ public class Bloona : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -24,10 +26,12 @@ public class Bloona : MonoBehaviour
          transform.localScale += Vector3.one * scaleToIncrease;
          if(clickToPop == 0)
          {
+            scoreManager.IncreaseScoreText(scoreToGive);
             Destroy(gameObject);
  
          }
          
+
 
     }
 }

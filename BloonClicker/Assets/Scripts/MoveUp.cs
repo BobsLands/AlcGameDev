@@ -10,6 +10,7 @@ public class MoveUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         bloona = GetComponent<Bloona>();
         
     }
@@ -20,6 +21,7 @@ public class MoveUp : MonoBehaviour
         transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
         if(transform.position.y > upperBound)
         {
+            scoreManager.DecreaseScoreText(bloona.scoreToGive); //subtractscore to give from toltal
             Destroy(gameObject);
         }
     }
