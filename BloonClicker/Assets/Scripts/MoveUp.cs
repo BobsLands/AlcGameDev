@@ -7,6 +7,8 @@ public class MoveUp : MonoBehaviour
     public float moveSpeed = 1.0f;
     public float upperBound = 25.0f;
     private Bloona bloona;
+    public scoreManager;
+
     // Start is called before the first frame update
     void Start()
     {
