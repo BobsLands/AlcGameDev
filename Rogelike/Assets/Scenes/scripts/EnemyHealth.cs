@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         
     }
-    public void TakeDamage(int dmgAmount)
+    public void TakesDamage(int dmgAmount)
     {
         eCurrenthealth -= dmgAmount;
 

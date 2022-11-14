@@ -8,14 +8,14 @@ public class Projectile : MonoBehaviour
     public int damage;
     private Transform player;
     private Vector2 target;
-    private PlayerHealth PlayersHealth;
+    private PlayerHealth PlayerHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         target = new Vector2(player.position.x, player.position.y);
-        PlayersHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
+        PlayerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -34,9 +34,11 @@ public class Projectile : MonoBehaviour
         {
             DestroyProjectile();
         }
+
         if(other.CompareTag("Player"))
         {
             PlayerHealth.TakeDamage(damage);
+            
             DestroyProjectile();
         }
     }

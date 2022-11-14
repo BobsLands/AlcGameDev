@@ -23,7 +23,8 @@ public class PlayerAttack : MonoBehaviour
 
                 for(int i = 0; i < enemiesToDamage.Length; i++)
                 {
-                    enemiesToDamage[i].GetComponent<EnemyHealth>().TakeDamage(damage);
+                    Debug.Log("hi");
+                    enemiesToDamage[i].GetComponent<EnemyHealth>().TakesDamage(damage);
                 }
             }
 

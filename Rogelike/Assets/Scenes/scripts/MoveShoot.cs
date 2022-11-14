@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveAndShoot : MonoBehaviour
+public class MoveShoot : MonoBehaviour
 {
     public float speed;
     public float stopDistance;

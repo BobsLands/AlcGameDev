@@ -20,16 +20,18 @@ public class PlayerHealth : MonoBehaviour
     {
         
     }
-    public void TakeDamage(int dmgAmount)
+
+    public void TakeDamage(int damage)
     {
-        Currenthealth -= dmgAmount;
+        Currenthealth -= damage;
 
         if(Currenthealth <= 0)
         {
             Destroy(gameObject,DeathDelay);
         }
     }
-        public void HealDamage(int healAmount)
+    
+    public void HealDamage(int healAmount)
     {
         Currenthealth += healAmount;
 
