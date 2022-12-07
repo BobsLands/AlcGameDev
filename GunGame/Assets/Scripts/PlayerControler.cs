@@ -50,8 +50,8 @@ public class PlayerControler : MonoBehaviour
     }
     void CameraLook()
     {
-        float y = Input.GetAxis("Mouse x") * lookSensitivity;
-        rotx += Input.GetAxis("Mouse y") * lookSensitivity;
+        float y = Input.GetAxis("Mouse X") * lookSensitivity;
+        rotx += Input.GetAxis("Mouse Y") * lookSensitivity;
         rotx = Mathf.Clamp(rotx, minLookx, maxLookx);
         camera.transform.localRotation = Quaternion.Euler(-rotx, 0, 0);
         transform.eulerAngles += Vector3.up * y;
@@ -65,4 +65,13 @@ public class PlayerControler : MonoBehaviour
         if(Physics.Raycast(ray, 1.1f))
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
     }
+    public void GiveHealth(int amount)
+    {
+        Debug.Log("player picked up health");
+    }
+    public void giveAmmo(int amount)
+    {
+        Debug.Log("player picked up health");
+    }
+
 }
